@@ -128,7 +128,7 @@ def register():
             name=request.form['name'],
             email=email,
             password=generate_password_hash(request.form['password'], method="pbkdf2:sha256", salt_length=8),
-            admin=False
+            admin=True
         )
         db.session.add(new_user)
         db.session.commit()
